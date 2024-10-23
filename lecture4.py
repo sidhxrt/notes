@@ -48,7 +48,6 @@ async def create_item_with_put(item_id: int, item: Item):
 
 # ** is a spread operator that unpacks the content of the dictionary
 
-
 @app.put("/items/{item_id}")
 async def create_item_with_put(item_id: int, item: Item, q: str | None = None):   # q is a query parameter
     result = {"item_id": item_id, **item.model_dump()}
