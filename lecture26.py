@@ -108,7 +108,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     if not hashed_password == user.hashed_password:
         raise HTTPException(status_code=400, detail="incorrect username or password")
     
-    return {"access_token": user.username, "token_type": "bearer"}
+    return {"access_token": user.username, "token_type": "bearer"}    # this return statement is needed for the Oauth2-password bearer and all
 
 # now app.get("/users/me") will work
 # Oauth2_scheme basically does the authorization by hitting the /token endpoint.
